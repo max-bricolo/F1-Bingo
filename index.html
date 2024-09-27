@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=yes">
+        <link rel="stylesheet" href="src/stylesheets/design.css">
+        <title>F1 Bingo</title>
+    </head>
+    <body>
+        <div id="header">
+            F1 BINGO
+        </div>
+        
+        <div id="player">
+            CARD N°:
+            <!--Um Nummern zuzuteilen-->
+            <p id="one"></p>
+            <button id="playerbt" onclick="random()">Playercard</button>
+            <script>
+                function random(){
+                    document.getElementById("one").innerHTML = Math.floor(Math.random() * 7)+1;
+                }
+            </script>
+        </div>
+        <br>
+        <br>
+        <br>
+        <!--links zu 7 bingo karten-->
+        <div id="card">
+            <a href="card1.html">Card 1</a>
+        </div>
+
+        <div id="card">
+            <a href="card2.html">Card 2</a>
+        </div>
+
+        <div id="card">
+            <a href="card3.html">Card 3</a>
+        </div>
+
+        <div id="scoreboard">
+            <a href="scoreboard.html">scoreboard</a>
+        </div>
+    </body>
+</html>
