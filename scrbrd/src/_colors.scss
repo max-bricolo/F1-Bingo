@@ -1,0 +1,26 @@
+$teams: (
+	("mercedes",	#6cd3bf),
+	("ferrari",		#ed1c24),
+	("redbull",		#1e5bc6),
+	("alpine",		#2293d1),
+	("haas",		#b6babd),
+	("rb",	#4e7c9b),
+	("williams",	#37bedd),
+	("astonmartin",	#2d826d),
+	("kicksauber",	#2FA630),
+	("mclaren",		#f58020)
+);
+
+@each $team in $teams
+{
+	.#{nth($team, 1)}-bg
+	{
+		background-color: nth($team, 2);
+	}
+
+	.#{nth($team, 1)}-text
+	{
+		text-shadow: 0 0 7px nth($team, 2), 0 0 7px nth($team, 2);
+		// color: nth($team, 2);
+	}
+}
