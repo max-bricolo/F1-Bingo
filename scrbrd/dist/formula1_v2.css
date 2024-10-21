@@ -86,12 +86,12 @@
   text-shadow: 0 0 7px #2d826d, 0 0 7px #2d826d;
 }
 
-.alfaromeo-bg {
-  background-color: #b12039;
+.racingbulls-bg {
+  background-color: #1434CB;
 }
 
-.alfaromeo-text {
-  text-shadow: 0 0 7px #b12039, 0 0 7px #b12039;
+.racingbulls-text {
+  text-shadow: 0 0 7px #1434CB, 0 0 7px #1434CB;
 }
 
 .mclaren-bg {
@@ -100,6 +100,30 @@
 
 .mclaren-text {
   text-shadow: 0 0 7px #f58020, 0 0 7px #f58020;
+}
+
+.onyx-bg {
+  background-color: #EC4D91;
+}
+
+.onyx-text {
+  text-shadow: 0 0 7px #EC4D91, 0 0 7px #EC4D91;
+}
+
+.renault-bg {
+  background-color: #FAD503;
+}
+
+.renault-text {
+  text-shadow: 0 0 7px #FAD503, 0 0 7px #FAD503;
+}
+
+.tororosso-bg {
+  background-color: #A39064;
+}
+
+.tororosso-text {
+  text-shadow: 0 0 7px #A39064, 0 0 7px #A39064;
 }
 
 .f1.nameplate-short {
@@ -175,11 +199,13 @@
   margin-right: 0.5rem;
 }
 .f1.nameplate-short .name-and-team .name-and-number .name .lastname {
-  font-family: "f1-bold";
+  /*font-family: "f1-bold";*/
+  font-weight: bolder;
 }
 .f1.nameplate-short .name-and-team .name-and-number .number {
   font-size: 1.1rem;
-  font-family: "f1-italic";
+  /*font-family: "f1-italic";*/
+  font-weight: bold;
 }
 .f1.nameplate-short .name-and-team .team {
   color: #cccccc;

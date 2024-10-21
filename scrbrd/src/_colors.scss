@@ -4,11 +4,14 @@ $teams: (
 	("redbull",		#1e5bc6),
 	("alpine",		#2293d1),
 	("haas",		#b6babd),
-	("rb",	#4e7c9b),
+	("racingbulls",	#1434CB),
 	("williams",	#37bedd),
 	("astonmartin",	#2d826d),
 	("kicksauber",	#2FA630),
-	("mclaren",		#f58020)
+	("mclaren",		#f58020),
+	("onyx",		#EC4D91),
+	("renault",		#FAD503)
+	("tororosso",	#A39064)
 );
 
 @each $team in $teams
