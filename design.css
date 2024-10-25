@@ -156,7 +156,7 @@ a{
   font-size: 11px;
   text-align: center;
   padding: 5px;
-  font-size: clamp(10px, 4vw, 16px); /* Dynamische Schriftgröße */
+  font-size: clamp(5px, 4vw, 11px); /* Dynamische Schriftgröße */
   padding: 10px;
   aspect-ratio: 1 / 1; /* Quadrat-Form erzwingen */
 }
