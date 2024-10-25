@@ -31,10 +31,10 @@
 
 body {
     padding-top: 20%; 
-    margin-left: 10%; 
+    margin-left: 25%; 
     /*font-family: Arial, Helvetica, sans-serif;*/
     background-color:  #f3f3f3 ;
-    width: 80%;
+    width: 50%;
   }
 
 #header{
@@ -139,8 +139,8 @@ a{
 .bingo-grid {
   max-width: 100%;
   display: grid;
-  grid-template-columns: repeat(5, 80px);
-  grid-template-rows: repeat(5, 80px);
+  grid-template-columns: repeat(5, 1fr);
+  grid-template-rows: repeat(5, 1fr);
   gap: 5px;
 }
 
@@ -155,6 +155,9 @@ a{
   font-size: 11px;
   text-align: center;
   padding: 5px;
+  font-size: clamp(10px, 4vw, 16px); /* Dynamische Schriftgröße */
+  padding: 10px;
+  aspect-ratio: 1 / 1; /* Quadrat-Form erzwingen */
 }
 
 
