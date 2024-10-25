@@ -137,7 +137,7 @@ a{
 }
 
 .bingo-grid {
-  max-width: 100%;
+  max-width: 80vw;
   display: grid;
   grid-template-columns: repeat(5, 1fr);
   grid-template-rows: repeat(5, 1fr);
