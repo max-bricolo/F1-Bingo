@@ -128,15 +128,6 @@ a{
     text-shadow: -1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000, 1px 1px 0 #000;
 }
 
-.bingo{
-    width: 100%;
-}
-
-.bingo td{
-    padding: 20px;
-
-}
-
 .bingo-grid {
   max-width: 80vw;
   display: grid;
@@ -146,7 +137,7 @@ a{
 }
 
 .bingo-cell {
-  display: flex;
+  /*display: flex;*/
   justify-content: center;
   align-items: center;
   background-color: #e5e5e5;
