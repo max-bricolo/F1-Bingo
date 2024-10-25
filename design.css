@@ -30,6 +30,7 @@
 }
 
 body {
+    max-width: 100%;
     padding-top: 20%; 
     margin-left: 25vw; 
     /*font-family: Arial, Helvetica, sans-serif;*/
