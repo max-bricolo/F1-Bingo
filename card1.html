@@ -13,68 +13,91 @@
         </div>
         
         <h1>TEST</h1>
-        <table class="bingo">
-            <tr>
-                <th class="field"><div>
-                    boom
-                    <br>
-                    </div>
-                </th>
-                <th><div class="field">
-                    boom
-                    <br>
-                    </div>
-                </th>
-            </tr>
-            <tr>
-                <th><div class="field">
-                    boom
-                    <br>
-                    </div>
-                </th>
-                <th><div class="field">
-                    boom
-                    <br>
-                    </div>
-                </th>              
-            </tr>
-            <tr>
-                <th><div class="field">
-                    boom
-                    <br>
-                </th>
-                <th><div class="field">
-                    boom
-                    <br>
-                </th>             
-            </tr>
-          </table>
-    
-        
+        <div class="bingo-grid">
+            <!-- Das 5x5-Bingo-Feld wird dynamisch erstellt 
+                weiter nicht auszufüllen -->
         </div>
+    
+        <!-- Popup-Fenster für den Sieg -->
+        <div id="popup" class="popup">
+            <p id="popup-message"></p>
+            <button onclick="closePopup()">OK</button>
+        </div>
+        
         <script>
-            /*activ lassen*/
+            // Text für jedes Bingo-Feld definieren
+            const bingoTexts = [
+                "Bingo 1", "Bingo 2", "Bingo 3", "Bingo 4", "Bingo 5",
+                "Bingo 6", "Bingo 7", "Bingo 8", "Bingo 9", "Bingo 10",
+                "Bingo 11", "Bingo 12", "Bingo 13", "Bingo 14", "Bingo 15",
+                "Bingo 16", "Bingo 17", "Bingo 18", "Bingo 19", "Bingo 20",
+                "Bingo 21", "Bingo 22", "Bingo 23", "Bingo 24", "Bingo 25"
+            ];
 
-            $('.bingo div').click(function () {
-                // make tabs default color
-                //$('.bingo div').removeclass('active')
+            // Bingo-Feld-Div-Element auswählen
+            const bingoGrid = document.querySelector('.bingo-grid');
+            const cells = [];
 
-                // make clicked tab fancy
-                $(this).addClass('active')
-            })
-           
-        </script>
-        <!--<script>
-            /*farbänderung*/
-    
-            function changeColor(color) {
-                document.getElementsByClassName("boom").style.background = color;
+            // 5x5-Bingo-Felder erstellen
+            for (let i = 0; i < 25; i++) {
+                const cell = document.createElement('div');
+                cell.classList.add('bingo-cell');
+                cell.textContent = bingoTexts[i];
+                
+                // Klick-Event hinzufügen
+                cell.addEventListener('click', () => {
+                    cell.classList.toggle('active'); // Farbe ändern beim Klicken
+                    checkForBingo();
+                });
+
+                cells.push(cell);
+                bingoGrid.appendChild(cell);
             }
-    
-            function myFunc() {
-                changeColor('#f00');
-            }        
-        </script>-->
+
+            // Funktion zur Prüfung, ob ein Bingo erreicht wurde
+            function checkForBingo() {
+                const activeCells = cells.map(cell => cell.classList.contains('active'));
+                
+                // Zeilen, Spalten und Diagonalen definieren
+                const winningLines = [
+                    // Zeilen
+                    [0, 1, 2, 3, 4], [5, 6, 7, 8, 9], [10, 11, 12, 13, 14],
+                    [15, 16, 17, 18, 19], [20, 21, 22, 23, 24],
+                    // Spalten
+                    [0, 5, 10, 15, 20], [1, 6, 11, 16, 21], [2, 7, 12, 17, 22],
+                    [3, 8, 13, 18, 23], [4, 9, 14, 19, 24],
+                    // Diagonalen
+                    [0, 6, 12, 18, 24], [4, 8, 12, 16, 20]
+                ];
+                
+                // Überprüfen, ob eine gewinnende Linie vorhanden ist
+                for (const line of winningLines) {
+                    if (line.every(index => activeCells[index])) {
+                        showPopup();
+                        break;
+                    }
+                }
+            }
+
+            // Popup-Anzeige bei einem Bingo
+            function showPopup() {
+                const popup = document.getElementById('popup');
+                const popupMessage = document.getElementById('popup-message');
+                
+                // Punktestand berechnen: 6 + 0.5 * (zusätzliche aktive Felder)
+                const activeCount = cells.filter(cell => cell.classList.contains('active')).length;
+                const score = 6 + 0.5 * (activeCount - 5);
+                popupMessage.textContent = `Bingo! Checkered Flag! Dein Punktestand: ${score} Teile Maxim diesen mit!` ;
+                
+                // Popup anzeigen
+                popup.style.display = 'block';
+            }
+
+            // Popup-Funktion zum Schließen
+            function closePopup() {
+                document.getElementById('popup').style.display = 'none';
+            }
+        </script>
         
 
     </body>

@@ -33,7 +33,7 @@ body {
     margin-top: 10%; 
     margin-left: 25%; 
     /*font-family: Arial, Helvetica, sans-serif;*/
-    background-color:  #FAFAFA ;
+    background-color:  #f3f3f3 ;
     width: 50%;
   }
 
@@ -135,10 +135,55 @@ a{
 
 }
 
-.field{
-    background-color: lightgray;
+.bingo-grid {
+  display: grid;
+  grid-template-columns: repeat(5, 80px);
+  grid-template-rows: repeat(5, 80px);
+  gap: 5px;
 }
 
-.active{
-    background-color: #b00b1e;
+.bingo-cell {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #e5e5e5;
+  border: 2px solid #333;
+  cursor: pointer;
+  transition: background-color 0.3s;
+  font-size: 14px;
+  text-align: center;
+  padding: 5px;
+}
+
+.bingo-cell.active {
+  background-color: #b00b1e;
+}
+
+.popup {
+  display: none;
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background-image: url("data/carbon-bg.jpg");
+  border: 2px solid #333;
+  border-radius: 8px;
+  padding: 20px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  text-align: center;
+  color:#fff;
+  text-shadow: -1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000, 1px 1px 0 #000;
+}
+
+.popup p {
+  margin-bottom: 15px;
+}
+
+.popup button {
+  padding: 10px 20px;
+  cursor: pointer;
+  background-color: #b00b1e;
+  color: white;
+  border: 2px solid #222;
+  border-radius: 5px;
 }
