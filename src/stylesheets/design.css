@@ -150,15 +150,30 @@ a{
   border: 2px solid #333;
   cursor: pointer;
   transition: background-color 0.3s;
-  font-size: 14px;
+  font-size: 11px;
   text-align: center;
   padding: 5px;
 }
+
 
 .bingo-cell.active {
   background-color: #b00b1e;
 }
 
+button {
+  margin: 20px;
+  padding: 10px 20px;
+  cursor: pointer;
+  background-color: #b00b1e;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  font-size: 16px;
+}
+
+button:hover {
+  background-color: #7f0816;
+}
 .popup {
   display: none;
   position: fixed;
@@ -187,3 +202,9 @@ a{
   border: 2px solid #222;
   border-radius: 5px;
 }
+
+.score-text {
+  color: #ff5722; /* Angepasste Farbe für den Punktestand */
+  font-weight: bold;
+}
+

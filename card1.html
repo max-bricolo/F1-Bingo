@@ -2,7 +2,8 @@
 <html>
     <head>
         <meta charset="utf-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=yes">
+        <meta name="MobileOptimized" content="320">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
         <link rel="stylesheet" href="src/stylesheets/design.css">
         <title>F1 Bingo</title>
     </head>
@@ -17,6 +18,8 @@
             <!-- Das 5x5-Bingo-Feld wird dynamisch erstellt 
                 weiter nicht auszufüllen -->
         </div>
+
+        <button id="timeout-button" onclick="endGame()">Timeout und Punkte zusammenzählen</button>
     
         <!-- Popup-Fenster für den Sieg -->
         <div id="popup" class="popup">
@@ -29,7 +32,7 @@
             const bingoTexts = [
                 "Bingo 1", "Bingo 2", "Bingo 3", "Bingo 4", "Bingo 5",
                 "Bingo 6", "Bingo 7", "Bingo 8", "Bingo 9", "Bingo 10",
-                "Bingo 11", "Bingo 12", "Bingo 13", "Bingo 14", "Bingo 15",
+                "Bingo 11", "Bingo 12", "Lights out and away we go!", "Bingo 14", "Bingo 15",
                 "Bingo 16", "Bingo 17", "Bingo 18", "Bingo 19", "Bingo 20",
                 "Bingo 21", "Bingo 22", "Bingo 23", "Bingo 24", "Bingo 25"
             ];
@@ -73,21 +76,28 @@
                 // Überprüfen, ob eine gewinnende Linie vorhanden ist
                 for (const line of winningLines) {
                     if (line.every(index => activeCells[index])) {
-                        showPopup();
+                        const activeCount = cells.filter(cell => cell.classList.contains('active')).length;
+                        const score = 15 + (activeCount-5) * 0.5;
+                        showPopup(`Bingo! Dein Punktestand: ${score}. Teile Maxim diesen mit!`);
                         break;
                     }
                 }
             }
 
-            // Popup-Anzeige bei einem Bingo
-            function showPopup() {
+            // Timeout-Spiel beenden und Punktestand anzeigen
+            function endGame() {
+                const activeCount = cells.filter(cell => cell.classList.contains('active')).length;
+                const score = activeCount * 0.5;
+                showPopup(`Checkered Flag! Dein Punktestand: ${score}. Teile Maxim diesen mit!`);
+            }
+
+            // Popup-Anzeige bei Bingo oder Spielende
+            function showPopup(message) {
                 const popup = document.getElementById('popup');
                 const popupMessage = document.getElementById('popup-message');
                 
-                // Punktestand berechnen: 6 + 0.5 * (zusätzliche aktive Felder)
-                const activeCount = cells.filter(cell => cell.classList.contains('active')).length;
-                const score = 6 + 0.5 * (activeCount - 5);
-                popupMessage.textContent = `Bingo! Checkered Flag! Dein Punktestand: ${score} Teile Maxim diesen mit!` ;
+                // Nachricht setzen
+                popupMessage.textContent = message;
                 
                 // Popup anzeigen
                 popup.style.display = 'block';
@@ -97,6 +107,7 @@
             function closePopup() {
                 document.getElementById('popup').style.display = 'none';
             }
+
         </script>
         
 
