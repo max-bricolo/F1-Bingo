@@ -4,13 +4,53 @@
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=yes">
         <link rel="stylesheet" href="src/stylesheets/design.css">
+        <link rel="stylesheet" href="scrbrd/dist/formula1_v2.css">
         <title>F1 Bingo</title>
     </head>
+    <style>
+        .container
+        {
+            display: flex;
+            flex-direction: column;
+            gap: 1rem;
+        }
+    </style>
     <body>
         <div id="header">
-            F1 BINGO
+            <a href="index.html"><img src="src/logo.png" alt="F1-Bingo" width="30%"></a>
+            </div>
+            <div class="container"></div>
+            <script src="scrbrd/dist/formula1_v2.js"></script>
+            <script>
+                let driver;
+                
+                
+                
+                driver = {
+                    "grid": {
+                        "position": 20,
+                        "state": "ontrack"
+                    },
+                    "color": "astonmartin",
+                    "firstname": "GP",
+                    "lastname": "Mexico",
+                    "team": "Aktuelles Rennen",
+                    "number": 2710,
+                    "flag": "mx"
+                };
+    
+                new Nameplate(driver).Create(document.querySelector(".container"));
+            </script>
         </div>
-        
+
+        <p>Willkommen zum F1 Bingo, einem kleinen Spaß den ich mir erlaubt habe.</p>
+        <p class="attention">WICHTIG: der Spiellauf am 27.10. ist ein beta-Test, somit sind Fehler und Bugs durchaus vorbehalten</p>
+        <p>Sollte etwas auffallen bitte ich darum, dass ihr mir das kurz sagt, sodass ich den Fehler in Zukunft beheben kann.</p>
+        <br>
+        <p class="attention">!!! ACHTUNG FÜR DEN 27.10. !!!</p>
+        <p class="attention">Stellt im browser den DESKTOP-MODUS an. ansonsten kann es zu schwierigkeiten mit der Darstellung des Spielfeldes kommen</p>
+        <br>
+        <br>
         <div id="player">
             CARD N°:
             <!--Um Nummern zuzuteilen-->
@@ -18,10 +58,11 @@
             <button id="playerbt" onclick="random()">Playercard</button>
             <script>
                 function random(){
-                    document.getElementById("one").innerHTML = Math.floor(Math.random() * 7)+1;
+                    document.getElementById("one").innerHTML = Math.floor(Math.random() * 5)+1;
                 }
             </script>
         </div>
+        <br>
         <br>
         <br>
         <br>
@@ -34,6 +75,21 @@
         <a href="card2.html">
             <div id="card">
                 Card 2
+             </div>
+        </a>
+        <a href="card3.hml">
+            <div id="card">
+                Card 3
+             </div>
+        </a>
+        <a href="card4.html">
+            <div id="card">
+                Card 4
+             </div>
+        </a>
+        <a href="card5.html">
+            <div id="card">
+                Card 5
              </div>
         </a>
         <a href="scoreboard.html">
