@@ -1,0 +1,165 @@
+@font-face {
+    font-family: "f1-regular";
+    src: url("https://www.formula1.com/etc/designs/fom-website/fonts/F1Regular/Formula1-Regular.woff2") format("woff2");
+}
+@font-face {
+    font-family: "f1-italic";
+    src: url("https://www.formula1.com/etc/designs/fom-website/fonts/F1RegularItalic/Formula1-Italic.woff2") format("woff2");
+}
+@font-face {
+    font-family: "f1-bold";
+    src: url("https://www.formula1.com/etc/designs/fom-website/fonts/F1Bold/Formula1-Bold.woff2") format("woff2");
+}
+@font-face {
+    font-family: "f1-black";
+    src: url("https://www.formula1.com/etc/designs/fom-website/fonts/F1Black/Formula1-Black.woff2") format("woff2");
+}
+@font-face {
+    font-family: "f1-wide";
+    src: url("https://www.formula1.com/etc/designs/fom-website/fonts/F1Wide/Formula1-Wide.woff2") format("woff2");
+}
+@font-face {
+    font-family: "f1-year";
+    src: url("https://www.formula1.com/etc/designs/fom-website/fonts/F1YEAR/F1YEARRegular.woff2") format("woff2");
+}
+
+* {
+    font-family: 'f1-regular';
+}
+
+body {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 0;
+    width: 100vw;
+    background-color: #f3f3f3;
+    padding: 5vw;
+}
+
+#header {
+    width: 90vw;
+    padding: 20px 5%;
+    background-color: #b00b1e;
+    color: #fff;
+    text-align: center;
+    border: 1px solid #000;
+    border-radius: 8px;
+    margin-bottom: 20px;
+}
+
+#player,
+#card,
+#scoreboard {
+    width: 90vw;
+    padding: 15px;
+    margin: 10px 0;
+    background-color: #aa9090;
+    color: #fff;
+    border-radius: 10px;
+    text-align: center;
+    background-image: url("data/carbon-bg.jpg");
+    background-size: cover;
+    background-position: center;
+}
+
+#player {
+    font-size: clamp(16px, 5vw, 20px);
+}
+
+#one {
+    font-weight: 800;
+    font-size: larger;
+}
+
+#playerbt {
+    display: inline-block;
+    border: 1px solid #fff;
+    color: #fff;
+    padding: 5px 10px;
+    background-color: #433C3B;
+    border-radius: 4px;
+    text-decoration: none;
+    font-size: clamp(12px, 3vw, 14px);
+}
+
+.bingo-grid {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    gap: 3px;
+    width: 90vw;
+    max-width: 400px;
+}
+
+.bingo-cell {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #e5e5e5;
+    border: 2px solid #333;
+    font-size: clamp(8px, 4vw, 14px);
+    aspect-ratio: 1 / 1;
+    cursor: pointer;
+    border-radius: 4px;
+    transition: background-color 0.3s;
+}
+
+.bingo-cell.active {
+    background-color: #b00b1e;
+}
+
+button {
+    padding: 10px 20px;
+    font-size: clamp(14px, 4vw, 16px);
+    background-color: #b00b1e;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    margin-top: 10px;
+}
+
+button:hover {
+    background-color: #7f0816;
+}
+
+.popup {
+    display: none;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 80vw;
+    padding: 20px;
+    background-color: #333;
+    color: #fff;
+    text-align: center;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+}
+
+.popup button {
+    padding: 8px 16px;
+    background-color: #b00b1e;
+    color: white;
+    border: 1px solid #222;
+    border-radius: 5px;
+    font-size: clamp(12px, 3vw, 14px);
+}
+
+.score-text {
+    color: #ff5722;
+    font-weight: bold;
+}
+
+/* Media Query für sehr kleine Bildschirme */
+@media (max-width: 500px) {
+    #header, #player, #card, #scoreboard {
+        padding: 10px;
+        font-size: 4vw;
+    }
+
+    .popup {
+        width: 90vw;
+    }
+}

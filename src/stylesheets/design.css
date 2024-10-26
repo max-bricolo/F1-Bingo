@@ -30,11 +30,12 @@
 }
 
 body {
-    margin-top: 10%; 
-    margin-left: 25%; 
+    max-width: 100%;
+    padding-top: 20%; 
+    margin-left: 25vw; 
     /*font-family: Arial, Helvetica, sans-serif;*/
     background-color:  #f3f3f3 ;
-    width: 50%;
+    width: 50vw;
   }
 
 #header{
@@ -50,6 +51,7 @@ body {
     border-style: solid;
     border-width: 1px;
     border-color: #000 ;
+    margin-bottom: 10%;
     }
 
 #player {
@@ -126,19 +128,11 @@ a{
     text-shadow: -1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000, 1px 1px 0 #000;
 }
 
-.bingo{
-    width: 100%;
-}
-
-.bingo td{
-    padding: 20px;
-
-}
-
 .bingo-grid {
+  max-width: 80vw;
   display: grid;
-  grid-template-columns: repeat(5, 80px);
-  grid-template-rows: repeat(5, 80px);
+  grid-template-columns: repeat(5, 1fr);
+  grid-template-rows: repeat(5, 1fr);
   gap: 5px;
 }
 
@@ -153,6 +147,9 @@ a{
   font-size: 11px;
   text-align: center;
   padding: 5px;
+  font-size: clamp(5px, 4vw, 11px); /* Dynamische Schriftgröße */
+  padding: 10px;
+  aspect-ratio: 1 / 1; /* Quadrat-Form erzwingen */
 }
 
 
@@ -162,6 +159,7 @@ a{
 
 button {
   margin: 20px;
+  margin-left: 0px;
   padding: 10px 20px;
   cursor: pointer;
   background-color: #b00b1e;
