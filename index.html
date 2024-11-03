@@ -20,11 +20,61 @@
     <body>
         <div id="header">
             <a href="index.html"><img src="src/logo.png" alt="F1-Bingo" width="30%"></a>
-            beta 0.2
-            </div>
+            beta 0.3
+        </div>
 
-            <div class="container"></div>
+        <div id="countdown-container">
+            <div id="flag-container">
+                <div class="container"></div>
+            </div>
+            <p id="countdown">00 TAGE 00:00:00</p>
+        </div>
+    
+        <script>
+            // Rennen-Daten mit Name, Datum und Flaggen-URL
+            const races = [
+                { name: "Brasilien GP", date: new Date("2024-11-03T21:30:00")},
+                //{ name: "Brasilien GP", date: new Date("2024-11-24T7:00:00")},
+                // Füge weitere Rennen hier hinzu
+            ];
+    
+            // Nächstes Rennen ermitteln
+            function getNextRace() {
+                const now = new Date();
+                return races.find(race => race.date > now);
+            }
+    
+            // Countdown-Funktion
+            function updateCountdown() {
+                const nextRace = getNextRace();
+                if (!nextRace) {
+                    document.getElementById("countdown").textContent = "Keine weiteren Rennen";
+                    return;
+                }
+    
+                const now = new Date();
+                const timeDifference = nextRace.date - now;
+    
+                const days = Math.floor(timeDifference / (1000 * 60 * 60 * 24));
+                const hours = Math.floor((timeDifference % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+                const minutes = Math.floor((timeDifference % (1000 * 60 * 60)) / (1000 * 60));
+                const seconds = Math.floor((timeDifference % (1000 * 60)) / 1000);
+    
+                document.getElementById("countdown").textContent =
+                    `${days} TAGE ${hours.toString().padStart(2, '0')}:${minutes.toString().padStart(2, '0')}:${seconds.toString().padStart(2, '0')}`;
+                
+                // Flagge und Rennnamen setzen
+                document.getElementById("race-name").textContent = nextRace.name;
+            }
+    
+            // Aktualisiere Countdown jede Sekunde
+            setInterval(updateCountdown, 1000);
+        </script>
+            
+            
+            
             <script src="scrbrd/dist/formula1_v2.js"></script>
+
             <script>
                 let driver;
                 
@@ -32,20 +82,20 @@
                 
                 driver = {
                     "grid": {
-                        "position": 5,
+                        "position": 21,
                         "state": "eliminated"
                     },
                     "color": "astonmartin",
                     "firstname": "GP",
                     "lastname": "Brasilien",
-                    "team": "Aktuelles Rennen - 3.11.",
+                    "team": "3. November 2024",
                     "number": 21,
                     "flag": "br"
                 };
     
                 new Nameplate(driver).Create(document.querySelector(".container"));
             </script>
-        </div>
+        
 
         <p>Willkommen zum F1 Bingo, einem kleinen Spaß den ich mir erlaubt habe.</p>
         <p class="attention">WICHTIG: der Spiellauf am 3.11. ist ein beta-Test, somit sind Fehler und Bugs durchaus vorbehalten</p>
@@ -91,11 +141,11 @@
                 Card 4
              </div>
         </a>
-        <a href="card5.html">
+        <!--<a href="card5.html">
             <div id="card">
                 Card 5
              </div>
-        </a>
+        </a>-->
         <a href="scoreboard.html">
             <div id="scoreboard">
                 scoreboard
