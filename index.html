@@ -33,7 +33,7 @@
         <script>
             // Rennen-Daten mit Name, Datum und Flaggen-URL
             const races = [
-                { name: "Abu-Dhabi GP", date: new Date("2024-12-08T14:00:00")},
+                { name: "Australien GP", date: new Date("2025-03-16T20:00:00")},
                 // Füge weitere Rennen hier hinzu
             ];
     
@@ -79,15 +79,15 @@
 
                 driver = {
                     "grid": {
-                        "position": 24,
+                        "position": 1,
                         "state": "eliminated"
                     },
                     "color": "rb",
                     "firstname": "GP",
-                    "lastname": "Abu-Dhabi",
-                    "team": "08. Dezember 2024",
-                    "number": 24,
-                    "flag": "ae"
+                    "lastname": "Australien",
+                    "team": "16. März 2025",
+                    "number": 1,
+                    "flag": "au"
                 };
     
                 new Nameplate(driver).Create(document.querySelector(".container"));
@@ -117,7 +117,12 @@
         <br>
         <br>
         <br>
-        <!--links zu 7 bingo karten-->
+        <a href="trivia.html">
+            <div id="card">
+                Season 24 Trivia
+             </div>
+        </a>
+        <!--links zu 7 bingo karten
         <a href="card1.html">
             <div id="card">
                 Card 1
@@ -138,7 +143,7 @@
                 Card 4
              </div>
         </a>
-        <!--<a href="card5.html">
+        <a href="card5.html">
             <div id="card">
                 Card 5
              </div>
