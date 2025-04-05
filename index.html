@@ -33,7 +33,10 @@
         <script>
             // Rennen-Daten mit Name, Datum und Flaggen-URL
             const races = [
-                { name: "China", date: new Date("2025-03-23T08:00:00")},
+                { name: "Japan", date: new Date("2025-04-06T07:00:00")},
+                { name: "Bahrain", date: new Date("2025-04-13T17:00:00")},
+                { name: "Saudi", date: new Date("2025-04-20T19:00:00")},
+                { name: "Miami", date: new Date("2025-05-04T22:00:00")},
                 // Füge weitere Rennen hier hinzu
             ];
     
@@ -79,15 +82,15 @@
 
                 driver = {
                     "grid": {
-                        "position": 1,
+                        "position": 3,
                         "state": "eliminated"
                     },
                     "color": "rb",
                     "firstname": "GP",
-                    "lastname": "China",
-                    "team": "22. März 2025",
-                    "number": 1,
-                    "flag": "cn"
+                    "lastname": "Japan",
+                    "team": "5. April 2025",
+                    "number": 3,
+                    "flag": "jp"
                 };
     
                 new Nameplate(driver).Create(document.querySelector(".container"));
@@ -109,7 +112,7 @@
             <button id="playerbt" onclick="random()">Playercard</button>
             <script>
                 function random(){
-                    document.getElementById("one").innerHTML = Math.floor(Math.random() * 4)+1;
+                    document.getElementById("one").innerHTML = Math.floor(Math.random() * 2)+1;
                 }
             </script>
         </div>
@@ -128,12 +131,12 @@
                 Card 1
              </div>
         </a>
-        <!--<a href="card2.html">
+        <a href="card2.html">
             <div id="card">
                 Card 2
              </div>
         </a>
-        <a href="card3.html">
+        <!--<a href="card3.html">
             <div id="card">
                 Card 3
              </div>
