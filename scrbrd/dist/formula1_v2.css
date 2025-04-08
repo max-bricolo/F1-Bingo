@@ -167,6 +167,18 @@
 .f1.nameplate-short .position.eliminated {
   background-color: #76010f;
 }
+.f1.nameplate-short .position.winner {
+  background-color: #FFD700;
+  color: black; 
+}
+.f1.nameplate-short .position.second {
+  background-color: #C0C0C0;
+  color: black; 
+}
+.f1.nameplate-short .position.third {
+  background-color: #CD7F32;
+  color: black; 
+}
 .f1.nameplate-short .separator {
   display: flex;
   flex-direction: column;
