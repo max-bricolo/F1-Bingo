@@ -33,8 +33,6 @@
         <script>
             // Rennen-Daten mit Name, Datum und Flaggen-URL
             const races = [
-                { name: "Bahrain", date: new Date("2025-04-13T17:00:00")},
-                { name: "Saudi", date: new Date("2025-04-20T19:00:00")},
                 { name: "Miami", date: new Date("2025-05-04T22:00:00")},
                 // Füge weitere Rennen hier hinzu
             ];
@@ -81,15 +79,15 @@
 
                 driver = {
                     "grid": {
-                        "position": 5,
+                        "position": 6,
                         "state": "eliminated"
                     },
                     "color": "rb",
                     "firstname": "GP",
-                    "lastname": "Saudi Arabien",
+                    "lastname": "Miami",
                     "team": "20. April 2025",
-                    "number": 5,
-                    "flag": "sa"
+                    "number": 6,
+                    "flag": "us"
                 };
     
                 new Nameplate(driver).Create(document.querySelector(".container"));
